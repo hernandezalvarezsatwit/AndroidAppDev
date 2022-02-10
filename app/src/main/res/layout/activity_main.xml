@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
 
+<!--    Guide lines-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="24dp" />
 
+<!--    Icon-->
     <ImageView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
@@ -32,6 +34,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--    Email Address box-->
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
@@ -39,6 +42,7 @@
         android:layout_marginTop="40dp"
         android:inputType="textEmailAddress"
         android:background="@drawable/et_bg"
+        android:textColorHint="@color/login_form_details"
         android:hint="Email address"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -46,6 +50,8 @@
         app:layout_constraintTop_toBottomOf="@id/icon"
         />
     <!--padding is so text is not all the way left-->
+
+<!--    Password box-->
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
@@ -54,33 +60,119 @@
         android:inputType="textPassword"
         android:background="@drawable/et_bg"
         android:hint="Password"
+        android:textColorHint="@color/login_form_details"
         android:padding="16dp"
+        android:drawableRight="@drawable/ic_eye"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintEnd_toStartOf="@id/guideline_right"
         app:layout_constraintTop_toBottomOf="@id/username"
         />
 
-    <Button
+<!--    Login Button-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="Login Now"
+        android:textColor="@color/login_form_details_medium"
         android:textAllCaps="false"
         android:background="@drawable/btn_bg"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/password"
-
         />
 
+<!--    Don't remember password-->
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't Remember Password"
+         android:textColor="@color/login_form_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        android:layout_marginTop="16dp" />
 
+<!--    Footer line-->
+    <View
+        android:id="@+id/footerLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
+<!--    Don't have an account-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account"
+        app:layout_constraintTop_toBottomOf="@id/footerLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/login_form_details"
+        />
 
+<!--    No idea but sometimes I need to do 0dp and sometimes wrap_content for width-->
 
+<!--    Sign in with Facebook-->
+    <TextView
+        android:id="@+id/face_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in with Facebook"
+        android:textColor="@color/login_form_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/footerLine"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_if_square_facebook"
+        android:drawablePadding="8dp"
+        />
 
+<!--    Broken line-->
 
+<!--    or-->
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textColor="@color/login_form_details"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/lineLeft"
+        app:layout_constraintTop_toTopOf="@id/lineLeft"
+        app:layout_constraintEnd_toStartOf="@+id/lineRight"
+        app:layout_constraintStart_toEndOf="@id/lineLeft"/>
 
+<!--    left line-->
+    <View
+        android:id="@+id/lineLeft"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:background="@color/login_form_details_medium"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/forgot_password"
+        app:layout_constraintBottom_toTopOf="@id/face_login"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toStartOf="@id/or"/>
+
+    <View
+        android:id="@+id/lineRight"
+        android:layout_width="120dp"
+        android:layout_height="1dp"
+        android:background="@color/login_form_details_medium"
+        app:layout_constraintBottom_toBottomOf="@id/or"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/or"
+        app:layout_constraintTop_toTopOf="@id/or"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
