@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:state_pressed="true">
+       <shape>
+           <stroke android:color="@color/login_form_details" android:width="2dp"/>
+           <corners android:radius="2dp"></corners>
+       </shape>
+    </item>
+    <!--    corners is to round the corners with given radius -->
+    <item>
+        <shape>
+            <stroke android:color="@color/login_form_details_light" android:width="2dp"/>
+            <corners android:radius="2dp"></corners>
+        </shape>
+    </item>
+</selector>
+
+<!--Selector allows multiple states as opposes to shape-->
+<!--So it should be used for buttons (pressed and unpressed state)-->
