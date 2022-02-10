@@ -111,6 +111,7 @@
 
 <!--    Don't have an account-->
     <TextView
+        android:id="@+id/noAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account"
@@ -146,8 +147,8 @@
         android:layout_height="wrap_content"
         android:text="or"
         android:textColor="@color/login_form_details"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/lineLeft"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/lineLeft"
         app:layout_constraintTop_toTopOf="@id/lineLeft"
         app:layout_constraintEnd_toStartOf="@+id/lineRight"
         app:layout_constraintStart_toEndOf="@id/lineLeft"/>
@@ -159,10 +160,11 @@
         android:layout_height="1dp"
         android:background="@color/login_form_details_medium"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintEnd_toStartOf="@id/or"
         app:layout_constraintTop_toBottomOf="@id/forgot_password"
         app:layout_constraintBottom_toTopOf="@id/face_login"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintEnd_toStartOf="@id/or"/>
+        />
 
     <View
         android:id="@+id/lineRight"
@@ -170,9 +172,9 @@
         android:layout_height="1dp"
         android:background="@color/login_form_details_medium"
         app:layout_constraintBottom_toBottomOf="@id/or"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toEndOf="@id/or"
         app:layout_constraintTop_toTopOf="@id/or"
+        app:layout_constraintStart_toEndOf="@id/or"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
