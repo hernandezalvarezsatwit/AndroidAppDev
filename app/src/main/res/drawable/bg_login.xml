@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient
+        android:startColor="@color/dark_blue"
+        android:endColor="@color/purple"
+        android:type="linear"
+        android:angle="205"/>
+<!--        Angle must be multiples of 45, only allowed for liner-->
+
+</shape>
